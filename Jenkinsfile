@@ -32,7 +32,7 @@ node {
    stage('RunningImages ') {
        sh '''
          docker pull koteswarararaosairi/webpage:latest
-         docker run -d -p 2222:80 koteswarararaosairi/webpage
+         docker run -d -p 2292:80 koteswarararaosairi/webpage
        
        '''
          }      
