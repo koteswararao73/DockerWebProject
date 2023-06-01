@@ -1,11 +1,20 @@
-node {
-    stage ('clone') {
-        git 'https://github.com/koteswararao73/DockerWebProject.git'
-    }
-    stage ('image build') {
-        sh ''' docker build -t koti . '''
-    }
-    stage ('run container') {
-        sh ''' docker run --name koti3211 -d -p 86:80 koti '''
+pipeline { 
+    agent any
+    stages {
+        stage ('clone') {
+            steps {
+                git 'https://github.com/koteswararao73/DockerWebProject.git'
+                stage ('build image') {
+                    steps {
+                        sh 'docker build -t gabber . '
+                stage ('run container') {
+                    steps {
+                        sh 'docker run --name scriprt -d -p 98:80 gabber '
+                    }
+                }
+                    }
+                }
+            }
+        }
     }
 }
