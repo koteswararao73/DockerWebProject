@@ -6,6 +6,6 @@ node {
         sh ''' docker build -t koti . '''
     }
     stage ('run container') {
-        sh ''' docker run --name koti12 -d -p 85:80 koti '''
+        sh ''' docker run --name koti3211 -d -p 86:80 koti '''
     }
 }
